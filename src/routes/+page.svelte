@@ -80,11 +80,6 @@
     text-align: left;
   }
 
-  .text-content p {
-    width: 100%;
-    text-align: left;
-  }
-
   /* About section left column specific styling */
   #about .col-md-6.blue {
     justify-content: center;
@@ -216,7 +211,7 @@
       </div>
     </div>
 
-    <div class="col-md-6 blue fullscreen">
+    <div class="col-md-6 blue">
       test
     </div>
   </div>
@@ -248,7 +243,81 @@
     <div class="col-md-6 yellow">
       <div class="text-content">
         <h2 class="header">REFERENCIÁK</h2>
-        X-Faktor • Csillag születik • Megasztár • Házasság Első Látásra • SztárBox • Next Top Model Hungary • Password • Lego Masters Hungary • Nyerő Páros • Kalandra Fal • Az Erőd • Kincsvadászok • Gáspárék • Mém Over • Kivele • Kapóra • Útközben Elmeséled • Kabát FC • A híd • The Voice • Hal a tortán • Séfek séfe • Survivor • Rich Kids Hungary • Virtuózok V4+ • Farm VIP • Vigyázat, gyerekkel vagyok! • Párharc • Ide süss! • Ninja Warrior Hungary • Pepe’s Beach Bar • Mintaapák • Összezárva Hajdú Péterrel • A Piramis • Álarcos énekes • Bezár a bazár • Kapd el, ha tudsz! • Ázsia Expressz • Fuss család, fuss • Ifjú tudósok • Partyzánok • Hungary’s Got Talent • Kicsi Óriások • Drágám, add az életed! • Extreme Activity • Annyit ésszel, mint erővel • MasterChef Junior • MasterChef VIP 2 • Pumpedék • Észbontók • Feleségek luxuskivitelben • Kicsi Gesztenye Klub • Showder Klub • Activity Ábel Anitával • Legyen Ön is Milliomos • Made in Karantén • Nagy Ő • Pandora szelencéje • Csillag születik • Jobb később, mint soha • Álommeló • Kísértés • Celeb vagyok, ments ki innen! • Nagy Színpad • Való Világ • Love Island • Házasodna a gazda • Sztárban sztár leszek! • Van életünk • Ébredj velünk! • Vacsorakirály • Nagy szám • Dancing with the Stars
+        <p>X-Faktor • 
+          Csillag születik • 
+          Megasztár • 
+          Házasság Első Látásra • 
+          SztárBox • 
+          Next Top Model Hungary • 
+          Password • 
+          Lego Masters Hungary • 
+          Nyerő Páros • 
+          Kalandra Fal • 
+          Az Erőd • 
+          Kincsvadászok • 
+          Gáspárék • 
+          Mém Over • 
+          Kivele • 
+          Kapóra • 
+          Útközben Elmeséled • 
+          Kabát FC • 
+          A híd • 
+          The Voice • 
+          Hal a tortán 
+          • Séfek séfe • 
+          Survivor • 
+          Rich Kids Hungary • 
+          Virtuózok V4+ • 
+          Farm VIP • 
+          igyázat, gyerekkel vagyok! • 
+          Párharc • 
+          Ide süss! • 
+          Ninja Warrior Hungary • 
+          Pepe’s Beach Bar • 
+          Mintaapák • 
+          Összezárva Hajdú Péterrel • 
+          A Piramis • 
+          Álarcos énekes • 
+          Bezár a bazár • 
+          Kapd el, ha tudsz! • 
+          Ázsia Expressz • 
+          Fuss család, fuss • 
+          Ifjú tudósok • 
+          Partyzánok • 
+          Hungary’s Got Talent • 
+          Kicsi Óriások • 
+          Drágám, add az életed! • 
+          Extreme Activity • 
+          Annyit ésszel, mint erővel • 
+          MasterChef Junior • 
+          MasterChef VIP 2 • 
+          Pumpedék • 
+          Észbontók • 
+          Feleségek luxuskivitelben • 
+          Kicsi Gesztenye Klub • 
+          Showder Klub • 
+          Activity Ábel Anitával • 
+          Legyen Ön is Milliomos • 
+          Made in Karantén • 
+          Nagy Ő • 
+          Pandora szelencéje • 
+          Csillag születik • 
+          Jobb később, mint soha • 
+          Álommeló • 
+          Kísértés • 
+          Celeb vagyok, ments ki innen! • 
+          Nagy Színpad • 
+          Való Világ • 
+          Love Island • 
+          Házasodna a gazda • 
+          Sztárban sztár leszek! • 
+          Van életünk • Ébredj velünk! • 
+          Vacsorakirály • 
+          Nagy szám • 
+          Dancing with the Stars • 
+          IstenEst • 
+          Ki Mit Tube
+        </p>
       </div>
       
     </div>

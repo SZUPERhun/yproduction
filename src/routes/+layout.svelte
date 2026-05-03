@@ -14,6 +14,7 @@
     font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     font-weight: 200;
     background: #141414;
+    font-size: 16px;
   }
 </style>
 
