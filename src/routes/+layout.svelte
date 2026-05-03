@@ -11,7 +11,9 @@
 
   :global(body) {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: 200;
+    background: #141414;
   }
 </style>
 
