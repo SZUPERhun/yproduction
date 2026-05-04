@@ -1,12 +1,23 @@
 <script lang="ts">
-  let name = '';
-  let email = '';
+  let firstName = '';
+  let lastName = '';
+  let subject = '';
+  let senderEmail = '';
   let message = '';
+
+  const recipientEmail = 'info@yproduction.hu'; // Replace with the email you want to receive messages
 
   function handleSubmit(e: Event) {
     e.preventDefault();
-    console.log({ name, email, message });
-    alert('Form submitted (check console)');
+
+    const fullName = `${firstName} ${lastName}`.trim();
+    const mailtoSubject = encodeURIComponent(subject);
+    const mailtoBody = encodeURIComponent(
+      `From: ${fullName} (${senderEmail})\n\n${message}`
+    );
+    const mailtoLink = `mailto:${recipientEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+    window.location.href = mailtoLink;
   }
 </script>
 
@@ -46,6 +57,10 @@
 
   section {
     min-height: 100vh;
+  }
+
+  section.footer {
+    min-height: auto;
   }
 
   .row {
@@ -134,6 +149,116 @@
     background: rgb(0, 119, 255);
   }
 
+  #contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 2rem;
+  }
+
+  #contact form {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .form-row input {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+  }
+
+  .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .btn {
+    padding: 0.85rem 1.25rem;
+    border: none;
+    border-radius: 0.35rem;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: #222;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #111;
+  }
+
+  .footer {
+    background: #111;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer .footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .footer .footer-block {
+    flex: 1 1 220px;
+    min-width: 220px;
+    text-align: left;
+  }
+
+  .footer .footer-block h3 {
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+  }
+
+  .footer .footer-block p,
+  .footer .footer-block a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    margin: 0.35rem 0;
+    display: block;
+  }
+
+  .footer .footer-bottom {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
   .green {
     background: rgb(106, 255, 0);
     height: calc(100vh - 80px);
@@ -141,6 +266,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
+  }
+
+  .title-container {
+    width: min(66.66%, 760px);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
+  }
+
+  .title-container h1,
+  .title-container p {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+  }
+
+  .title-container p {
+    margin-top: 0.5rem;
+    max-width: 90%;
   }
 
 
@@ -180,8 +328,10 @@
 
 
 <section class="green">
-  <h1>My Product</h1>
-  <p>A simple sentence describing what this product does.</p>
+  <div class="title-container">
+    <h1 class="header">Y PRODUCTION</h1>
+    <p>Hangot adunk a történetnek.</p>
+  </div>
 </section>
 
 <section id="home">
@@ -324,32 +474,83 @@
   </div>
 </section>
 
-<section id="contact blue">
-  <h1>KÉRDÉSED VAN?</h1>
-  <div>Keress minket bátran:</div>
+<section id="contact">
+  <div class="row">
+    <div class="col-md-12 blue form-container">
+      <h1 class="header">KÉRDÉSED VAN?</h1>
+      <p>Keress minket bátran:</p>
 
-  <form onsubmit={handleSubmit}>
-    <input
-      type="text"
-      placeholder="Your name"
-      bind:value={name}
-      required
-    />
+      <form onsubmit={handleSubmit}>
+        <div class="form-row">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="First name"
+            bind:value={firstName}
+            required
+          />
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Last name"
+            bind:value={lastName}
+            required
+          />
+        </div>
 
-    <input
-      type="email"
-      placeholder="Your email"
-      bind:value={email}
-      required
-    />
+        <input
+          class="form-control"
+          type="email"
+          placeholder="Your email"
+          bind:value={senderEmail}
+          required
+        />
 
-    <textarea
-      rows="5"
-      placeholder="Your message"
-      bind:value={message}
-      required
-    ></textarea>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Subject"
+          bind:value={subject}
+          required
+        />
 
-    <button type="submit">Send</button>
-  </form>
+        <textarea
+          class="form-control"
+          rows="6"
+          placeholder="Your message"
+          bind:value={message}
+          required
+        ></textarea>
+
+        <button class="btn btn-primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="footer-content">
+    <div class="footer-block">
+      <h3>Y Production</h3>
+      <p>Professzionális hangutómunka, hangfelvétel és AI tartalomgyártás.</p>
+    </div>
+
+    <div class="footer-block">
+      <h3>Kapcsolat</h3>
+      <a href="mailto:info@yproduction.hu">info@yproduction.hu</a>
+      <a href="tel:+36123456789">+36 1 234 5678</a>
+      <p>Budapest, Magyarország</p>
+    </div>
+
+    <div class="footer-block">
+      <h3>Nyitvatartás</h3>
+      <p>Hétfő–Péntek: 09:00–18:00</p>
+      <p>Szombat: 10:00–14:00</p>
+      <p>Vasárnap: Zárva</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Y Production. Minden jog fenntartva.</p>
+  </div>
 </section>
