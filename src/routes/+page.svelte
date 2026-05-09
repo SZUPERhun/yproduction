@@ -5,7 +5,7 @@
   let senderEmail = '';
   let message = '';
 
-  const recipientEmail = 'info@yproduction.hu'; // Replace with the email you want to receive messages
+  const recipientEmail = 'info@yproduction.hu';
 
   function handleSubmit(e: Event) {
     e.preventDefault();
@@ -35,11 +35,6 @@
     text-align: left;
   }
 
-  .avenir-light  {
-    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    font-weight: 200;
-  }
-
   nav {
     top: 0;
     width: 100%;
@@ -63,42 +58,30 @@
     min-height: auto;
   }
 
-  .row {
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-  }
-
-  .col-md-6 {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  /* Text content wrapper for consistent width */
   .text-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    max-width: 400px;
+    max-width: 60%;
+    margin-left: 20%;
+    margin-top: 3%;
   }
 
-  .text-content h1,
+  @media (max-width: 767.98px) {
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-left: 1%;
+      margin-top: 3%;
+    }
+  }
+
   .text-content h2 {
     width: 100%;
     margin: 0 0 1rem 0;
-    text-align: left;
-  }
-
-  /* About section left column specific styling */
-  #about .col-md-6.blue {
-    justify-content: center;
-    align-items: center;
     text-align: left;
   }
 
@@ -108,16 +91,11 @@
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    padding-left: 20%;
   }
 
   .yellow-text {
     color: #facc15;
-  }
-
-  #about hr {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    margin: 0.5rem 0;
   }
 
   #about p {
@@ -126,19 +104,6 @@
 
   p {
     text-align: justify;
-  }
-
-  /* Mobile: Stack columns vertically */
-  @media (max-width: 767.98px) {
-    .row {
-      flex-direction: column;
-      min-height: auto;
-    }
-
-    .col-md-6 {
-      min-height: 100vh;
-      width: 100%;
-    }
   }
 
   .yellow {
@@ -157,6 +122,15 @@
   }
 
   .form-container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/IG-2.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+
+  .form-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,7 +138,11 @@
     text-align: center;
     width: 100%;
     min-height: 100%;
-    padding: 2rem;
+    padding: 2rem 0;
+  }
+
+  .col-md-6 {
+    min-height: 100vh;
   }
 
   #contact form {
@@ -259,17 +237,7 @@
     color: rgba(255, 255, 255, 0.6);
   }
 
-  .green {
-    background: rgb(106, 255, 0);
-    height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-  }
-
-  .title-container {
+  .title-text-container {
     width: min(66.66%, 760px);
     background: rgba(0, 0, 0, 0.5);
     padding: 2.5rem 2rem;
@@ -279,20 +247,18 @@
     box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
   }
 
-  .title-container h1,
-  .title-container p {
+  .title-text-container h1,
+  .title-text-container p {
     width: 100%;
     text-align: left;
     margin: 0;
   }
 
-  .title-container p {
+  .title-text-container p {
     margin-top: 0.5rem;
-    max-width: 90%;
+    max-width: 100%;
   }
 
-
-  /* Contact form */
   form {
     max-width: 400px;
     display: flex;
@@ -313,8 +279,45 @@
     cursor: pointer;
   }
 
-  .about-content {
-    text-align: left;
+  .title-div {
+    position: relative;
+    height: 500px;
+    color: white;
+    background-image: url("/IG-11.JPG");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .top-div {
+    position: absolute;
+    max-width: 60%;
+    max-height: 60%;
+    left: 40%;
+    top: 40%;
+    z-index: 2;
+  }
+
+  @media (max-width: 900px) {
+    .top-div {
+      left: 10%;
+      top: 30%;
+    }
+
+    .top-div h1 {
+      font-size: 22px;
+    }
+
+    h2.header {
+      font-size: 32px;
+    }
+
+    .top-div p {
+      font-size: 18px;
+    }
+
+    .service-group {
+      padding-left: 5%;
+    }
   }
 </style>
 
@@ -326,13 +329,14 @@
   </nav>
 </div>
 
-
-<section class="green">
-  <div class="title-container">
-    <h1 class="header">Y PRODUCTION</h1>
-    <p>Hangot adunk a történetnek.</p>
+<div class="row justify-content-center">
+  <div class="title-div col-12">
+    <div class="top-div title-text-container">
+      <h1 class="header">Y PRODUCTION</h1>
+      <p>Hangot adunk a történetnek.</p>
+    </div>
   </div>
-</section>
+</div>
 
 <section id="home">
   <div class="row">
@@ -361,15 +365,15 @@
       </div>
     </div>
 
-    <div class="col-md-6 blue">
-      test
+    <div class="col-md-6">
+      <img src="/y_production_logo_RGB.svg" alt="Y Production logo" class="responsive-image" />
     </div>
   </div>
 </section>
 
 <section id="about">
   <div class="row">
-    <div class="col-md-6 header about-content">
+    <div class="col-md-6">
       <div class="service-group">
         <p class="yellow-text">SZOLGÁLTATÁSAINK</p>
         <p>HANGFELVÉTEL</p>
@@ -469,14 +473,13 @@
           Ki Mit Tube
         </p>
       </div>
-      
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="row">
-    <div class="col-md-12 blue form-container">
+  <div class="row form-container">
+    <div class="col-md-12 form-div">
       <h1 class="header">KÉRDÉSED VAN?</h1>
       <p>Keress minket bátran:</p>
 
@@ -485,15 +488,15 @@
           <input
             class="form-control"
             type="text"
-            placeholder="First name"
-            bind:value={firstName}
+            placeholder="Vezetéknév"
+            bind:value={lastName}
             required
           />
           <input
             class="form-control"
             type="text"
-            placeholder="Last name"
-            bind:value={lastName}
+            placeholder="Keresztnév"
+            bind:value={firstName}
             required
           />
         </div>
@@ -501,7 +504,7 @@
         <input
           class="form-control"
           type="email"
-          placeholder="Your email"
+          placeholder="E-mail cím"
           bind:value={senderEmail}
           required
         />
@@ -509,7 +512,7 @@
         <input
           class="form-control"
           type="text"
-          placeholder="Subject"
+          placeholder="Tárgy"
           bind:value={subject}
           required
         />
@@ -517,12 +520,12 @@
         <textarea
           class="form-control"
           rows="6"
-          placeholder="Your message"
+          placeholder="Üzenet"
           bind:value={message}
           required
         ></textarea>
 
-        <button class="btn btn-primary" type="submit">Send message</button>
+        <button class="btn btn-primary" type="submit">Üzenet küldése</button>
       </form>
     </div>
   </div>
@@ -538,15 +541,7 @@
     <div class="footer-block">
       <h3>Kapcsolat</h3>
       <a href="mailto:info@yproduction.hu">info@yproduction.hu</a>
-      <a href="tel:+36123456789">+36 1 234 5678</a>
       <p>Budapest, Magyarország</p>
-    </div>
-
-    <div class="footer-block">
-      <h3>Nyitvatartás</h3>
-      <p>Hétfő–Péntek: 09:00–18:00</p>
-      <p>Szombat: 10:00–14:00</p>
-      <p>Vasárnap: Zárva</p>
     </div>
   </div>
 

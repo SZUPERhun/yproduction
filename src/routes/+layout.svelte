@@ -1,5 +1,5 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '/y_production_logo_RGB.svg';
 
 	let { children } = $props();
 </script>
@@ -13,7 +13,7 @@
     margin: 0;
     font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     font-weight: 200;
-    background: #141414;
+    background: #000000;
     font-size: 16px;
   }
 </style>
