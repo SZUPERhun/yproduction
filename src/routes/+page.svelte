@@ -3,6 +3,7 @@
 
   const bgImage1 = asset('/IG-11.JPG');
   const bgImage2 = asset('/IG-2.jpg');
+  const bgImage3 = asset('/IG-13.JPG');
 
 
   let firstName = '';
@@ -334,6 +335,44 @@
       padding-left: 5%;
     }
   }
+
+  .hero {
+    width: 100%;
+    height: 100vh;
+    background-image: var(--bg-image3);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    image-rendering: auto;
+  }
+
+  /* dark overlay for contrast */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  /* ensures content is above overlay */
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* makes video feel like a real UI element */
+  .video-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
 </style>
 
 <div class="nav-container">
@@ -384,6 +423,29 @@
       <img src={asset("/y_production_logo_RGB.svg")} alt="Y Production logo" class="responsive-image" />
     </div>
   </div>
+</section>
+
+<section class="hero d-flex align-items-center justify-content-center" style={`--bg-image3: url('${bgImage3}')`}>
+	<div class="overlay"></div>
+
+	<div class="container position-relative">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-9 col-lg-7">
+				
+				<div class="video-card shadow-lg">
+					<div class="ratio ratio-16x9 rounded overflow-hidden">
+						<iframe
+							src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+							title="YouTube video"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 </section>
 
 <section id="about">
