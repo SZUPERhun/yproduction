@@ -299,6 +299,19 @@
     z-index: 2;
   }
 
+  .responsive-image {
+    max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+  }
+
+  .logo-div {
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
   @media (max-width: 900px) {
     .top-div {
       left: 10%;
@@ -367,7 +380,7 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 logo-div">
       <img src={asset("/y_production_logo_RGB.svg")} alt="Y Production logo" class="responsive-image" />
     </div>
   </div>
