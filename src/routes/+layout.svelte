@@ -1,5 +1,5 @@
 <script lang="ts">
-	import favicon from '/y_production_logo_RGB.svg';
+  import { asset } from '$app/paths';
 
 	let { children } = $props();
 </script>
@@ -19,7 +19,7 @@
 </style>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={asset("/y_production_logo_RGB.svg")} />
 </svelte:head>
 
 {@render children()}

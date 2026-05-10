@@ -1,4 +1,10 @@
 <script lang="ts">
+  import { asset } from '$app/paths';
+
+  const bgImage1 = asset('/IG-11.JPG');
+  const bgImage2 = asset('/IG-2.jpg');
+
+
   let firstName = '';
   let lastName = '';
   let subject = '';
@@ -110,10 +116,6 @@
     background: #facc15;
   }
 
-  .blue {
-    background: rgb(0, 119, 255);
-  }
-
   #contact {
     min-height: 100vh;
     display: flex;
@@ -124,7 +126,7 @@
   .form-container {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/IG-2.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--bg-image2);
     background-size: cover;
     background-position: center;
     color: white;
@@ -283,7 +285,7 @@
     position: relative;
     height: 500px;
     color: white;
-    background-image: url("/IG-11.JPG");
+    background-image: var(--bg-image1);
     background-size: cover;
     background-position: center;
   }
@@ -330,7 +332,7 @@
 </div>
 
 <div class="row justify-content-center">
-  <div class="title-div col-12">
+  <div class="title-div col-12" style={`--bg-image1: url('${bgImage1}')`}>
     <div class="top-div title-text-container">
       <h1 class="header">Y PRODUCTION</h1>
       <p>Hangot adunk a történetnek.</p>
@@ -366,7 +368,7 @@
     </div>
 
     <div class="col-md-6">
-      <img src="/y_production_logo_RGB.svg" alt="Y Production logo" class="responsive-image" />
+      <img src={asset("/y_production_logo_RGB.svg")} alt="Y Production logo" class="responsive-image" />
     </div>
   </div>
 </section>
@@ -478,7 +480,7 @@
 </section>
 
 <section id="contact">
-  <div class="row form-container">
+  <div class="row form-container" style={`--bg-image2: url('${bgImage2}')`}>
     <div class="col-md-12 form-div">
       <h1 class="header">KÉRDÉSED VAN?</h1>
       <p>Keress minket bátran:</p>
