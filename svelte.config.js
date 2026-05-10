@@ -12,7 +12,8 @@ const config = {
 			assets: 'build'
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/yproduction' : ''
+			base: ''
+			//base: process.env.NODE_ENV === 'production' ? '/yproduction' : ''
 		}
 	}
 };
